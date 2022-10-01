@@ -1,0 +1,57 @@
+{
+  "manifest_version" : 3,
+  "name" : "Live Chat by Customerly",
+  "description": "The Top Live Chat software in the world is here. Tweak its appearance on your website.",
+  "version" : "1",
+  "content_scripts" : [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ],
+  "icons": {
+    "16": "images/icon_16.png",
+    "48": "images/icon_48.png",
+    "128": "images/icon_128.png"
+  },
+  "background" : {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_icon" : {
+        "16": "images/icon_16.png",
+        "48": "images/icon_48.png",
+        "128": "images/icon_128.png"
+    },
+    "default_title" : "Live chat",
+    "default_popup": "panel/panel.html"
+  },
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "permissions": [
+    "tabs",
+    "background",
+    "scripting",
+    "storage"
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "images/*",
+        "panel/panel.html",
+        "panel/panel.js",
+        "panel/panel.css",
+        "customerly-snippet.js"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ]
+
+}
